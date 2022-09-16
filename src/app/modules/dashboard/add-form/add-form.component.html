@@ -1,0 +1,67 @@
+
+
+<form   [formGroup]="LoginForm" (ngSubmit)="submite()">
+
+
+  <mat-form-field appearance="outline" class="example-full-width">
+    <input type="text" matInput formControlName="name" placeholder="Enter your name">
+    <mat-hint>نام</mat-hint>
+    <mat-error style="text-align:right; font-size:15px;" *ngIf="!LoginForm.controls['name'].valid && LoginForm.controls['name'].touched">نام خودرا وارد کنید</mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline" class="example-full-width">
+
+    <input type="text" name="" formControlName="lastName" placeholder="Enter your Last Name" matInput >
+
+    <mat-hint>نام خوانوادگی</mat-hint>
+    <mat-error *ngIf="!LoginForm.controls['lastName'].valid && LoginForm.controls['lastName'].touched ">نام خوانوادگی خود را کامل وارد کنید</mat-error>
+
+  </mat-form-field>
+
+
+
+
+  <mat-form-field appearance="outline" class="example-full-width">
+    <input type="email" matInput formControlName="email"
+    placeholder="Ex. pat@example.com" matInput>
+
+    <mat-hint>ایمیل</mat-hint>
+
+    <mat-error *ngIf="!LoginForm.controls['email'].valid && LoginForm.controls['email'].touched">لطفا ایمیل خودرا وارد کنید</mat-error>
+  </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+
+     <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <mat-hint>پسورد</mat-hint>
+      <mat-error *ngIf="!LoginForm.controls['password'].valid && LoginForm.controls['password'].touched">لطفا پسورد خودرا وارد کنید</mat-error>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Phone number</mat-label>
+      <input type="tel" matInput placeholder="9125544578" formControlName="phone" >
+
+      <mat-icon matSuffix>phone</mat-icon>
+      <mat-hint>شماره موبایل</mat-hint>
+      <mat-error *ngIf="!LoginForm.controls['phone'].valid && LoginForm.controls['phone'].touched"> لطفا شماره موبایل خودرا وارد کنید</mat-error>
+
+    </mat-form-field>
+
+
+
+<button mat-flat-button class="btn" color="primary" [disabled]="LoginForm.invalid">submit</button>
+</form>

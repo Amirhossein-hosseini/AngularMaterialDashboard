@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <div class="nav_container">
+    <button  (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+  </div>
+
+  <div>
+
+  </div>
+</mat-toolbar>
+
+
+<mat-drawer-container >
+  <mat-drawer #drawer mode="side"  class="example-sidenav" >
+    <mat-list role="list">
+      <mat-list-item role="listitem" [routerLink]="['login']">login</mat-list-item>
+      <mat-list-item role="listitem">Item 2</mat-list-item>
+      <mat-list-item role="listitem">Item 3</mat-list-item>
+    </mat-list>
+
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <mat-card>
+      <mat-card-content>
+        <router-outlet></router-outlet>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer-content>
+</mat-drawer-container>

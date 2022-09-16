@@ -1,0 +1,24 @@
+.nav_container{
+  display:grid;
+  grid-template-columns: 90% 10%;
+  width: 100%;
+}
+
+mat-drawer-content {
+  height: 80vh;
+
+  padding: 1rem;
+}
+
+.example-sidenav{
+  padding: 20px;
+}
+
+mat-card-content{
+  display: flex;
+
+flex-direction:column-reverse;
+  justify-content: center;
+
+  align-items:center;
+}

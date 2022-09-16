@@ -1,0 +1,26 @@
+
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+
+  margin-bottom: 30px;
+}
+
+
+mat-error,mat-hint{
+  text-align:right; font-size:15px;
+}
+
+
+.btn{
+  display: block;
+    margin: 33px;
+    width: 93%;
+}
