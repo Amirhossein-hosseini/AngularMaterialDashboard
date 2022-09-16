@@ -4,12 +4,29 @@
       <mat-icon>menu</mat-icon>
     </button>
     <div class="menu_title">
-      <span >My App</span>
+      <span >My dashboard</span>
 
     </div>
   </div>
 
   <div>
+    <button style="float:right;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
 
   </div>
 </mat-toolbar>
@@ -26,6 +43,8 @@
   </mat-drawer>
 
   <mat-drawer-content>
+    <mat-label [routerLink]="['/dashboard']">Home</mat-label> /rejester
+    <hr>
     <mat-card>
       <mat-card-content>
         <router-outlet></router-outlet>

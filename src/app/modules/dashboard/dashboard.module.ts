@@ -14,6 +14,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NotfoundComponent } from './notfound/notfound.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 const routes:Routes = [
 
@@ -25,10 +26,10 @@ const routes:Routes = [
         path: "rejester",
         component:AddFormComponent
       },
-      {
-        path: "**",
-        component:NotfoundComponent
-      }
+      // {
+      //   path: "**",
+      //   component:NotfoundComponent
+      // }
     ]
   },
   {
@@ -54,7 +55,7 @@ const routes:Routes = [
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-
+    MatMenuModule,
     ReactiveFormsModule,
 
     RouterModule.forChild(routes)
