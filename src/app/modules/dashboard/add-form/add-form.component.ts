@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { Router } from '@angular/router';
 import { __asyncDelegator } from 'tslib';
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -9,6 +10,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
+
 @Component({
   selector: 'app-add-form',
   templateUrl: './add-form.component.html',
@@ -16,12 +18,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class AddFormComponent implements OnInit {
 
-  constructor( private fb:FormBuilder) { }
-  // emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  constructor( private fb:FormBuilder,private router:Router) { }
   hide = true;
 LoginForm!:FormGroup
 value:string[]|undefined
-  // matcher = new MyErrorStateMatcher();
   ngOnInit(){
   this.LoginForm = new FormGroup({
 
@@ -29,7 +29,6 @@ value:string[]|undefined
       lastName: new FormControl(null, [Validators.required,Validators.maxLength(30),Validators.minLength(6)]),
       email: new FormControl(null,[Validators.required,Validators.email]),
       phone: new FormControl(null,[Validators.required,Validators.minLength(5)]),
-      // textera: new FormControl(null,[Validators.required,Validators.minLength(200)]),
       password: new FormControl(null,[Validators.required,Validators.minLength(6),Validators.maxLength(12)])
 
     })
@@ -42,8 +41,14 @@ submite(){
   console.log(this.LoginForm);
   console.log(this.LoginForm.valid);
 if(this.LoginForm.valid){
+  alert('thanks for rejester');
   console.log(this.LoginForm.value);
+
+
 }
+
+// this.router.navigate(["/dashboard"]);
+
   }
 
 

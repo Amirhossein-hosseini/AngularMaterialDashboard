@@ -3,7 +3,10 @@
     <button  (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" >
       <mat-icon>menu</mat-icon>
     </button>
-    <span>My App</span>
+    <div class="menu_title">
+      <span >My App</span>
+
+    </div>
   </div>
 
   <div>
@@ -15,7 +18,7 @@
 <mat-drawer-container >
   <mat-drawer #drawer mode="side"  class="example-sidenav" >
     <mat-list role="list">
-      <mat-list-item role="listitem" [routerLink]="['login']">login</mat-list-item>
+      <mat-list-item role="listitem" [routerLink]="['rejester']">rejester</mat-list-item>
       <mat-list-item role="listitem">Item 2</mat-list-item>
       <mat-list-item role="listitem">Item 3</mat-list-item>
     </mat-list>

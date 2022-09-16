@@ -13,24 +13,35 @@ import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/mater
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes:Routes = [
+
   {
     path: "",
     component: DashboardComponent,
     children: [
       {
-        path: "login",
+        path: "rejester",
         component:AddFormComponent
+      },
+      {
+        path: "**",
+        component:NotfoundComponent
       }
     ]
+  },
+  {
+    path: "**",
+    component:NotfoundComponent
   }
 ]
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    AddFormComponent
+    AddFormComponent,
+    NotfoundComponent
   ],
   imports: [
     CommonModule,
